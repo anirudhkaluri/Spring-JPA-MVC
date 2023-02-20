@@ -1,4 +1,4 @@
-package com.SpringBootJPA.demo;
+package com.SpringBootJPA.demo.model;
 
 public class Alien {
 
