@@ -11,8 +11,8 @@
 		<form action="addAlien">
 			<label for="aid">Alien ID:</label>
 			<input type="text" name="aid" id="aid"><br>
-			<label for="aname">Alien Name:</label>
-			<input type="text" name="aname" id="aname"><br>
+			<label for="name">Alien Name:</label>
+			<input type="text" name="name" id="name"><br>
 			<input type="submit"><br>
 		
 		</form>
