@@ -29,14 +29,6 @@
 			<Input type="text" name="aid" id="alienID"><br>
 			<input type="submit">
 		</form>
-		
-		
-		<h2>Get Alien by Tech</h2>
-		<form action="getAlien">
-			<label for="tech">Enter Alien Id:</label>
-			<Input type="text" name="tech" id="tech"><br>
-			<input type="submit">
-		</form>
 
 </body>
 </html>
