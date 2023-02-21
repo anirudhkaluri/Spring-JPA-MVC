@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-		
+		<h1>Submit an Alien</h1>
 		<form action="addAlien">
 			<label for="aid">Alien ID:</label>
 			<input type="text" name="aid" id="aid"><br>
@@ -17,6 +17,15 @@
 			<input type="text" name="tech" id="tech"><br>
 			<input type="submit"><br>
 		
+		</form>
+		<br>
+		<br>
+		<br>
+		<h1>Get an Alien</h1>
+		<form action="getAlien">
+			<label for="alienID">Enter Alien Id:</label>
+			<Input type="text" name="alienID" id="alienID"><br>
+			<input type="submit">
 		</form>
 
 </body>
