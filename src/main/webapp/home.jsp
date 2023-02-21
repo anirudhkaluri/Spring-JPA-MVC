@@ -32,7 +32,7 @@
 		
 		
 		<h2>Get Alien by Tech</h2>
-		<form action="getWithTech">
+		<form action="getAlien">
 			<label for="tech">Enter Alien Id:</label>
 			<Input type="text" name="tech" id="tech"><br>
 			<input type="submit">
