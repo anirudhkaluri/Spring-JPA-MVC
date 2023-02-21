@@ -32,6 +32,8 @@ public class AlienController {
 		
 		ModelAndView mv=new ModelAndView("showAlien.jsp");
 		Alien alien=repo.findById(aid).orElse(new Alien());
+		System.out.println("\n\n\nAliens with ID greater than+"+aid);
+		System.out.println(repo.findByAidGreaterThan(aid));
 		mv.addObject(alien);
 		return mv;
 	}
