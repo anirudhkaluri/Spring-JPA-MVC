@@ -28,10 +28,10 @@ public class AlienController {
 	}
 	
 	@RequestMapping("/getAlien")
-	public ModelAndView getAlien(@RequestParam int alienID) {
+	public ModelAndView getAlien(@RequestParam int aid) {
 		
-		ModelAndView mv=new ModelAndView("showAlien");
-		Alien alien=repo.findById(alienID).orElse(new Alien());
+		ModelAndView mv=new ModelAndView("showAlien.jsp");
+		Alien alien=repo.findById(aid).orElse(new Alien());
 		mv.addObject(alien);
 		return mv;
 		

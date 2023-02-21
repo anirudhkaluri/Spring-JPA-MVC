@@ -18,13 +18,15 @@
 			<input type="submit"><br>
 		
 		</form>
+		
 		<br>
 		<br>
 		<br>
+		
 		<h1>Get an Alien</h1>
 		<form action="getAlien">
 			<label for="alienID">Enter Alien Id:</label>
-			<Input type="text" name="alienID" id="alienID"><br>
+			<Input type="text" name="aid" id="alienID"><br>
 			<input type="submit">
 		</form>
 
