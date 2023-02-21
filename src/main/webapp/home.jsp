@@ -13,6 +13,8 @@
 			<input type="text" name="aid" id="aid"><br>
 			<label for="name">Alien Name:</label>
 			<input type="text" name="name" id="name"><br>
+			<label for="tech">Technology:</label>
+			<input type="text" name="tech" id="tech"><br>
 			<input type="submit"><br>
 		
 		</form>
