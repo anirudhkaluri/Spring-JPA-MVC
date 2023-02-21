@@ -36,6 +36,11 @@ public class AlienController {
 		return mv;
 	}
 	
+	@RequestMapping("/getWithTech")
+	public void getWithTech(@RequestParam String tech) {
+		System.out.println(repo.findByTech(tech));
+	}
+	
 	
 	
 }
