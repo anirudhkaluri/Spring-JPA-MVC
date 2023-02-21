@@ -1,7 +1,12 @@
 package com.SpringBootJPA.demo.model;
 
-public class Alien {
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+@Entity
+public class Alien {
+	
+	@Id
 	private int aid;
 	private String name;
 	public int getAid() {
