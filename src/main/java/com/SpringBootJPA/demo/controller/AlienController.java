@@ -34,9 +34,8 @@ public class AlienController {
 		Alien alien=repo.findById(aid).orElse(new Alien());
 		mv.addObject(alien);
 		return mv;
-		
-		
-		
 	}
+	
+	
 	
 }
