@@ -29,6 +29,15 @@
 			<Input type="text" name="aid" id="alienID"><br>
 			<input type="submit">
 		</form>
+		
+		<h1>Get Aliens by entering Technology</h1>
+		<form action="getWithTech">
+			<label for="tech">Enter Alien Id:</label>
+			<Input type="text" name="tech" id="tech"><br>
+			<input type="submit">
+		</form>
+		
+		
 
 </body>
 </html>
