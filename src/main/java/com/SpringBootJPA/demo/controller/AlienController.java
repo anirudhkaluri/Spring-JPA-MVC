@@ -39,6 +39,11 @@ public class AlienController {
 	@RequestMapping("/getWithTech")
 	public void getWithTech(@RequestParam String tech) {
 		System.out.println(repo.findByTech(tech));
+		
+		System.out.println("\n\n\n\nAFTER SORTING");
+		
+		System.out.println(repo.findByTechSorted(tech));
+		
 	}
 	
 	
