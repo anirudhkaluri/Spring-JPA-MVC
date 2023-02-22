@@ -11,7 +11,7 @@ public interface AlienRepo extends CrudRepository<Alien,Integer>{
 	
 	List<Alien> findByTech(String tech);
 	List<Alien> findByAidGreaterThan(int aid);
-	@Query("from ALIEN where tech=?1 order by name")
+	@Query("from Alien where tech=?1 order by name")
 	List<Alien> findByTechSorted(String tech);
 
 }
