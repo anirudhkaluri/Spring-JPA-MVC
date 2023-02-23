@@ -1,5 +1,8 @@
 package com.SpringBootJPA.demo.controller;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.SpringBootJPA.demo.Dao.AlienRepo;
+import com.SpringBootJPA.demo.Dao.AlienRepo2;
 import com.SpringBootJPA.demo.model.Alien;
 
 @Controller
@@ -16,6 +20,9 @@ public class AlienController {
 	
 	@Autowired
 	AlienRepo repo;
+	
+	@Autowired
+	AlienRepo2 repo2; //this is with JpaRepository
 	
 	@RequestMapping("/")
 	public String home() {
@@ -49,18 +56,40 @@ public class AlienController {
 		System.out.println(repo.findByTechSorted(tech));
 		
 	}
-	
+	/*
+	 * This is with CrudRepository
 	@RequestMapping("/aliens")
 	@ResponseBody
 	public String getAllAliens() {
-		return repo.findAll().toString();
+		return repo.findAll().toString(); //this is with CrudRepository
+	
+	}
+	*/
+	
+	
+	//Lets write it with JpaRepository
+	
+	@RequestMapping("/aliens")
+	@ResponseBody
+	public List<Alien> getAllAliens(){
+		return repo2.findAll(); //we are using JpaRepository
+		//we get a json format now
 	}
 	
-	
+	/*
+	 *This if we use CrudRepository
 	@RequestMapping("/alien/{aid}")
 	@ResponseBody
 	public String getSpecificAlien(@PathVariable("aid") int aid) {
-		return repo.findById(aid).toString();
+		return repo.findById(aid).toString(); 
+	}
+	*/
+	
+	//Lets use JpaRepository
+	@RequestMapping("/alien/{aid}")
+	@ResponseBody
+	public Optional<Alien> getSpecificAlien(@PathVariable("aid") int aid) {
+		return repo2.findById(aid); //we get a json format now
 	}
 	
 	

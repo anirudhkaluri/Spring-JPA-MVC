@@ -6,4 +6,5 @@ import com.SpringBootJPA.demo.model.Alien;
 
 public interface AlienRepo2 extends JpaRepository<Alien,Integer>{
 	
+	
 }
