@@ -9,13 +9,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.SpringBootJPA.demo.Dao.AlienRepo;
 import com.SpringBootJPA.demo.Dao.AlienRepo2;
 import com.SpringBootJPA.demo.model.Alien;
 
-@Controller
+//@Controller
+/*
+ *  we will change the annotation for controller from @Controller to @RestController 
+ *  so that we can remove the annotation @ResponseBody every time. 
+ *  Spring will take care of it if we use @RestController
+ */
+@RestController
 public class AlienController {
 	
 	@Autowired
@@ -71,7 +78,7 @@ public class AlienController {
 
 	//This sends data in xml or json format depending on clien request header
 	@RequestMapping("/aliens")
-	@ResponseBody
+	//@ResponseBody //Removed this annotation since we are using @RestController
 	public List<Alien> getAllAliens(){
 		return repo2.findAll(); //we are using JpaRepository
 		//we get a json format now
@@ -102,7 +109,7 @@ public class AlienController {
 	
 	 // This sends data in xml or json format depending on clien request header
 	@RequestMapping("/alien/{aid}")
-	@ResponseBody
+	//@ResponseBody //Removed this annotation since we are using @RestController
 	public Optional<Alien> getSpecificAlien(@PathVariable("aid") int aid) {
 		return repo2.findById(aid); //we get a json format now
 	}
