@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -113,7 +114,7 @@ public class AlienController {
 	
 	
 	 // This sends data in xml or json format depending on clien request header
-	@RequestMapping("/alien/{aid}")
+	@GetMapping("/alien/{aid}")
 	//@ResponseBody //Removed this annotation since we are using @RestController
 	public Optional<Alien> getSpecificAlien(@PathVariable("aid") int aid) {
 		return repo2.findById(aid); //we get a json format now
