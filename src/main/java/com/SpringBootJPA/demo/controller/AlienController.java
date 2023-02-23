@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -36,12 +37,15 @@ public class AlienController {
 		return "home.jsp"; //for this to return jsp we need to add tomcat jasper.
 	}
 	
+	/*
+	 * We removed this since we are using @PostMapping / alien REST request to add an alien 
 	@RequestMapping("/addAlien")
 	public String addAlien(Alien alien) {
 		
 		repo.save(alien);
 		return "home.jsp";
 	}
+	*/
 	
 	@RequestMapping("/getAlien")
 	public ModelAndView getAlien(@RequestParam int aid) {
@@ -107,6 +111,7 @@ public class AlienController {
 	//Lets use JpaRepository
 	
 	
+	
 	 // This sends data in xml or json format depending on clien request header
 	@RequestMapping("/alien/{aid}")
 	//@ResponseBody //Removed this annotation since we are using @RestController
@@ -123,6 +128,12 @@ public class AlienController {
 		return repo2.findById(aid); //we get a xml format now
 	}
 	*/
+	
+	@PostMapping("/alien")
+	public String addAlien(Alien alien) {
+		repo.save(alien);
+		return "home.jsp";
+	}
 	
 	
 }
