@@ -68,12 +68,23 @@ public class AlienController {
 	
 	
 	//Lets write it with JpaRepository
-	
+	/*
+	 * This sends data in xml or json format depending on clien request header
 	@RequestMapping("/aliens")
 	@ResponseBody
 	public List<Alien> getAllAliens(){
 		return repo2.findAll(); //we are using JpaRepository
 		//we get a json format now
+	}
+	*/
+	
+	//lets restrict the above function to send only xml
+	
+	@RequestMapping(path="/aliens",produces= {"application/xml"})
+	@ResponseBody
+	public List<Alien> getAllAliens(){
+		return repo2.findAll(); 
+		//we get a xml format now
 	}
 	
 	/*
@@ -86,10 +97,21 @@ public class AlienController {
 	*/
 	
 	//Lets use JpaRepository
+	
+	/*
+	 * This sends data in xml or json format depending on clien request header
 	@RequestMapping("/alien/{aid}")
 	@ResponseBody
 	public Optional<Alien> getSpecificAlien(@PathVariable("aid") int aid) {
 		return repo2.findById(aid); //we get a json format now
+	}
+	*/
+	
+	//lets restrict it to sending only xml format data
+	@RequestMapping(path="/alien/{aid}",produces= {"application/xml"})
+	@ResponseBody
+	public Optional<Alien> getSpecificAlien(@PathVariable("aid") int aid) {
+		return repo2.findById(aid); //we get a xml format now
 	}
 	
 	
